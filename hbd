@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Amplop Ulang Tahun</title>
+  <style>
+    body {
+      background-color: #fffdd0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    img.envelope-img {
+      width: 250px;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+    }
+
+    img.envelope-img:hover {
+      transform: scale(1.05);
+    }
+
+    .instruction {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #6b4f00;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .fade-out {
+      animation: fadeOut 1s forwards;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: scale(1.2);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <img src="AMPLO.jpg" alt="Amplop Ulang Tahun" class="envelope-img" id="envelope" onclick="openEnvelope()">
+
+  <div class="instruction">Klik amplopnya untuk membuka ucapan spesial 🎉</div>
+
+  <audio id="clickSound" src="chinese-music.mp3" preload="auto"></audio>
+
+  <script>
+    function openEnvelope() {
+      const envelope = document.getElementById("envelope");
+      const audio = document.getElementById("clickSound");
+
+      audio.play();
+      envelope.classList.add("fade-out");
+
+      setTimeout(() => {
+        window.location.href = "DOA.html";
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
